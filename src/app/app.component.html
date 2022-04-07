@@ -1,0 +1,13 @@
+<div>
+  <input type="text" #inputEl placeholder="product name" />
+  <button (click)="addProduct(inputEl)">add</button>
+</div>
+
+<app-product
+  *ngFor="let product of products; let i = index"
+  [productName]="product"
+  (deleteAction)="delete(i)"
+></app-product>
+
+<h2>Summary Products</h2>
+<div>summary: {{ summary }}</div>

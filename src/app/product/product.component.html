@@ -1,0 +1,28 @@
+<div>
+  <h2>
+    {{ productName }}
+  </h2>
+  <div>
+    <span>price:</span>
+    <span><input type="range" [formControl]="priceForm" /></span>
+    {{ priceForm.value }}
+  </div>
+  <div>
+    <span>vat:</span>
+    <span><input type="number" [formControl]="vatForm" /></span>
+  </div>
+  <div>
+    <span>amount:</span>
+    <span><input type="range" max="20" [formControl]="amountForm" /></span>
+    {{ amountForm.value }}
+  </div>
+  <div>
+    <span>summary:</span>
+    <span>
+      {{ summary$ | async }}
+    </span>
+  </div>
+  <div>
+    <button (click)="delete()">Delete</button>
+  </div>
+</div>
